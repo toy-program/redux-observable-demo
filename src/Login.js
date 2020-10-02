@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const Login = (props) => {
     const [auth, setAuth] = useState({username: "", password: ""});
@@ -16,10 +16,8 @@ const Login = (props) => {
         const {username, password} = auth;
         actions.getAuth(username, password);
     }
-    
-    useEffect(() => {
-        console.log(auth)
-    })
+
+    if (props.auth) return null;
 
     return (
         <div className="login">
